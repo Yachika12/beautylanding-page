@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowify | Beauty & Skincare</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #332b2b;
+            background: #fffaf8;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            background: #fffaf8;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #b76e79;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #514747;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #b76e79;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #b76e79;
+            color: white;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 5px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #98535e;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 65px 8%;
+            min-height: 560px;
+            background: #f8e9e5;
+        }
+
+        .hero-content {
+            max-width: 490px;
+        }
+
+        .tag {
+            color: #a45d68;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            font-family: Georgia, serif;
+            font-weight: normal;
+        }
+
+        .hero h1 span {
+            color: #b76e79;
+            font-style: italic;
+        }
+
+        .hero p {
+            color: #776968;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        .hero img {
+            width: 46%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 180px 180px 10px 10px;
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .heading {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 40px;
+        }
+
+        .heading h2 {
+            font-family: Georgia, serif;
+            font-size: 37px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .heading p {
+            color: #857777;
+            line-height: 1.7;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #f0e6e2;
+            padding-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px #b76e791c;
+        }
+
+        .product img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 22px 20px 0;
+        }
+
+        .product-info h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: #8a7c7c;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #b76e79;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .product .btn {
+            margin: 18px 20px 0;
+            padding: 11px 18px;
+        }
+
+        .promo {
+            background: #e9d3cd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+        }
+
+        .promo-content {
+            max-width: 510px;
+        }
+
+        .promo h2 {
+            font-size: 39px;
+            font-family: Georgia, serif;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .promo p {
+            color: #6c5955;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .promo img {
+            width: 42%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .benefit {
+            padding: 25px 15px;
+        }
+
+        .benefit .icon {
+            font-size: 35px;
+            margin-bottom: 18px;
+        }
+
+        .benefit h3 {
+            margin-bottom: 12px;
+        }
+
+        .benefit p {
+            color: #857777;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .newsletter {
+            background: #f8e9e5;
+            text-align: center;
+            padding: 65px 8%;
+        }
+
+        .newsletter h2 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            color: #776968;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        .newsletter input {
+            flex: 1;
+            min-width: 0;
+            padding: 14px;
+            border: 1px solid #e1c8c3;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        footer {
+            padding: 35px 8%;
+            background: #332b2b;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer .logo {
+            color: #e8b3b8;
+        }
+
+        footer p {
+            color: #d1c3c3;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            nav {
+                padding: 20px 5%;
+            }
+
+            nav a {
+                margin-left: 12px;
+            }
+
+            .hero {
+                padding: 50px 6%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero img {
+                height: 330px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .promo {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .promo img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 540px) {
+            nav {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .hero img {
+                width: 100%;
+                height: 340px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .heading h2,
+            .promo h2,
+            .newsletter h2 {
+                font-size: 30px;
+            }
+
+            .products,
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter form {
+                flex-direction: column;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer a {
+                margin: 0 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Glowify.</div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">BEAUTY • CARE • CONFIDENCE</span>
+
+            <h1>Your Skin Deserves <span>Something Beautiful.</span></h1>
+
+            <p>
+                Discover skincare essentials designed to make your
+                daily routine feel special. Simple care, thoughtful
+                ingredients and a little glow every day.
+            </p>
+
+            <a href="#products" class="btn">Explore Collection →</a>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1000&q=85"
+            alt="Skincare beauty products">
+    </header>
+
+    <!-- Products -->
+    <section id="products">
+        <div class="heading">
+            <span class="tag">OUR COLLECTION</span>
+            <h2>Beauty Essentials</h2>
+            <p>
+                Meet your new everyday favourites for a simple,
+                refreshing skincare routine.
+            </p>
+        </div>
+
+        <div class="products">
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=800&q=80"
+                    alt="Face serum">
+                <div class="product-info">
+                    <h3>Glow Face Serum</h3>
+                    <p>A lightweight addition to your daily skincare routine.</p>
+                    <div class="price">₹499</div>
+                </div>
+                <a href="#contact" class="btn">Shop Now</a>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=800&q=80"
+                    alt="Skincare cream">
+                <div class="product-info">
+                    <h3>Hydrating Face Cream</h3>
+                    <p>A rich-feeling moisturiser for your everyday routine.</p>
+                    <div class="price">₹699</div>
+                </div>
+                <a href="#contact" class="btn">Shop Now</a>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=800&q=80"
+                    alt="Beauty and skincare essentials">
+                <div class="product-info">
+                    <h3>Daily Care Set</h3>
+                    <p>A curated set to make your self-care routine easier.</p>
+                    <div class="price">₹999</div>
+                </div>
+                <a href="#contact" class="btn">Shop Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Promotion -->
+    <section class="promo" id="about">
+        <div class="promo-content">
+            <span class="tag">A LITTLE SELF-CARE</span>
+
+            <h2>Make Time For Yourself.</h2>
+
+            <p>
+                At Glowify, we believe that skincare should feel
+                simple, enjoyable and personal. Find products that
+                fit your routine and turn everyday moments into
+                something special.
+            </p>
+
+            <a href="#contact" class="btn">Discover Glowify →</a>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85"
+            alt="Relaxing skincare and beauty treatment">
+    </section>
+
+    <!-- Benefits -->
+    <section>
+        <div class="heading">
+            <h2>Why Choose Glowify?</h2>
+            <p>Thoughtful beauty essentials with a focus on your experience.</p>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit">
+                <div class="icon">🌸</div>
+                <h3>Thoughtful Care</h3>
+                <p>Products selected with your daily beauty routine in mind.</p>
+            </div>
+
+            <div class="benefit">
+                <div class="icon">✨</div>
+                <h3>Simple Routine</h3>
+                <p>Easy-to-use essentials for a more enjoyable self-care ritual.</p>
+            </div>
+
+            <div class="benefit">
+                <div class="icon">💝</div>
+                <h3>Made For You</h3>
+                <p>Find your favourites and create a routine that feels personal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="contact">
+        <h2>A Little Glow In Your Inbox</h2>
+        <p>Sign up for beauty updates, product news and special offers.</p>
+
+        <form id="newsletterForm">
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+
+        <p id="message" style="margin-top:15px;"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <div class="logo">Glowify.</div>
+            <p>Make every day a little more beautiful.</p>
+        </div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+        </div>
+
+        <p>© 2026 Glowify. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("newsletterForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            document.getElementById("message").textContent =
+                "Thank you for subscribing! This is a demo form.";
+
+            document.getElementById("email").value = "";
+        });
+    </script>
+
+</body>
+
+</html>
